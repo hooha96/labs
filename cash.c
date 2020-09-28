@@ -4,38 +4,40 @@
 
 void print_change(float change){
 
-    float cents, nickels, dimes, quarters; 
+    float cents; 
     float c = change;
     int coins = 0;
 
-    cents = (c * 100);
-    nickels = floor(cents / 5);
-    dimes = floor(cents / 10);
-    quarters = floor(cents / 25);
+    cents = c * 100;
 
     while (cents != 0){
-        if (cents >= 25){
+        while (cents >= 25){
             coins = coins + 1;
             cents = cents - 25;
+            break;
         }
 
-        if (cents < 25 && cents >= 10){
+        while (cents < 25 && cents >= 10){
             coins = coins + 1;
             cents = cents - 10;
+            break;
         }
 
-        if (cents < 10 && cents >= 5){
+        while (cents < 10 && cents >= 5){
             coins = coins + 1;
             cents = cents - 5;
+            break;
         }
 
-        if (cents < 5 & cents >= 1){
+        while (cents < 5 & cents >= 1){
             coins = coins + 1;
             cents = cents - 1;
+            break;
         }
 
-        else if (cents < 1) {
+        if (cents < 1) {
             coins = coins / 1;
+            cents = 0;
             break;
         }
 
