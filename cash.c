@@ -13,7 +13,7 @@ void print_change(float change){
     dimes = floor(cents / 10);
     quarters = floor(cents / 25);
 
-    while (cents != 0){
+    while (cents > 0){
         if (cents >= 25){
             coins = coins + 1;
             cents = cents - 25;
@@ -36,6 +36,7 @@ void print_change(float change){
 
         else {
             coins = coins / 1;
+            break;
         }
     }
 
