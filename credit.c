@@ -56,7 +56,7 @@ bool luhn(long num, int l, int d){
     for (int y = 0; y < l; y++){
         printf("%i ", temp[y]);
     }*/
-    
+
     sum_total = sum + sum_digits;
 
     if (sum_total % 10 == 0){
@@ -76,6 +76,7 @@ int main(void){
     if (l == 15 && (d == 34 || d == 37)){
         if (luhn(num, l, d)){
             printf("AMEX\n");
+            return 1;
         }
         else
             printf("INVALID\n");
@@ -85,6 +86,7 @@ int main(void){
     if (l == 16 && (d == 51 || d == 52 || d == 53 || d == 54 || d == 55)){
         if (luhn(num, l, d)){
             printf("MASTERCARD\n");
+            return 1;
         }
         else
             printf("INVALID\n");
@@ -94,6 +96,7 @@ int main(void){
     if ((l == 13 || l == 16) && (floor(d / 10) == 4)){
         if (luhn(num, l, d)){
             printf("VISA\n");
+            return 1;
         }
         else
             printf("INVALID\n");
