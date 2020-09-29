@@ -13,7 +13,57 @@ int digit_check(long num, int l){
 }
 
 bool luhn(long num, int l, int d){
-    return 1;
+    long n = num;
+    int sum = 0;
+    int sum_digits = 0;
+    int sum_total;
+    int digits[l], temp[l];
+    //prints credit card number to array digits[]
+    for (int i = l-1; i >= 0; i--)
+    {
+        digits[i] = n % 10;
+        n = n / 10;
+    }
+    //copies contents of digits to temp
+    for (int z = 0; z < l; z++){
+        temp[z] = digits[z];
+    }
+    //multiplies every other number starting second right by 2 and stores in temp
+    for (int x = l-2; x >= 0; x = x-2){
+        temp[x] = digits[x] * 2;
+    }
+    //replaces other numbers with 0
+    for (int x = l-1; x >= 0; x = x-2){
+        temp[x] = 0;
+    }
+    //calculates sum of product digits
+    for (int q = 0; q < l; q++){
+        if (temp[q] > 9){
+            sum = sum + (floor(temp[q] / 10) + (temp[q] % 10));
+        }
+        else
+            sum += temp[q];
+    }
+    //prints sum of all other digits not multiplied by 2
+    for (int i = l-1; i >= 0; i = i - 2){
+        sum_digits += digits[i];
+    }
+    /*//for test purposes: prints array digits after manipulation
+    for (int j = 0; j < l; j++){
+        printf("%i ", digits[j]);
+    }
+    printf("\n");
+    for (int y = 0; y < l; y++){
+        printf("%i ", temp[y]);
+    }*/
+    
+    sum_total = sum + sum_digits;
+
+    if (sum_total % 10 == 0){
+        return 1;
+    }
+    else
+        return 0;
 }
 
 int main(void){
