@@ -42,7 +42,7 @@ void ciph (char *txt, float k){
             if (txt[j] > 'z' && txt[j] <= 127)
                 txt[j] -= 26;
             if (txt[j] < 0)
-                txt[j] = '!';
+                txt[j] = 'z' - (k + 14);
             j++;
         }
         else{
