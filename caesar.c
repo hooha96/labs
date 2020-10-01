@@ -28,8 +28,8 @@ int main(int argc, char *argv[]){
     printf("String: %s\n", text);
 
     ciph(text, num);
-
-    printf("%.1f\n", num);
+    return 0;
+    //printf("%.1f\n", num);
 }
 
 void ciph (char *txt, float k){
@@ -37,7 +37,7 @@ void ciph (char *txt, float k){
     while (txt[j] != '\0'){
         if ((txt[j] >= 'a' && txt[j] <= 'z') || (txt[j] >= 'A' && txt[j] <= 'Z')){
             txt[j] += k;
-            if (txt[j] > 'Z')
+            if (txt[j] > 'Z' && txt[j] < 'a')
                 txt[j] -= 26;
             if (txt[j] > 'z' && txt[j] < 'A')
                 txt[j] -= 26;
@@ -47,7 +47,7 @@ void ciph (char *txt, float k){
             j++;
         }
     }
-
+    printf("ciphertext: ");
     for (int i = 0; i < strlen(txt); i++){
         printf("%c", txt[i]);
     }
