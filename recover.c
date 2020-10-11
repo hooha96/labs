@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
             }
         }
 
-        if (pics > 0)
+        else if (pics > 0)
              fwrite(buffer, SIZE, 1, outFile);
 
     }
