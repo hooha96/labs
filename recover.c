@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     unsigned char buffer[SIZE];
     //int stream = 0;
     int pics = 0;
-    char out[SIZE];
+    char out[8];
 
     //stream = fread(buffer, SIZE, 1, file);
 
