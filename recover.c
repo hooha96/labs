@@ -18,11 +18,11 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    FILE *outFile;
+    FILE *outFile = NULL;
     unsigned char buffer[SIZE];
     //int stream = 0;
     int pics = 0;
-    char out[8];
+    char out[SIZE];
 
     //stream = fread(buffer, SIZE, 1, file);
 
