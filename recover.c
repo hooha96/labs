@@ -22,12 +22,24 @@ int main(int argc, char *argv[])
     unsigned char buffer[SIZE];
     //int stream = 0;
     int pics = 0;
-    char out[SIZE];
+    char out[8];
+    int check_jpeg = 0;
 
     //stream = fread(buffer, SIZE, 1, file);
 
     while (fread(buffer, SIZE, 1, file) == 1){
         if(buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0){
+            if (check_jpeg == 1){
+                fclose(outFile);
+            }
+            else
+                check_jpeg = 1;
+
+            sprintf(out, "%03i.jpg", pics);
+            outFile = fopen(out, "w");
+
+            pics++;
+            /*
             if (pics == 0){
                 sprintf(out, "%03i.jpg", pics);
                 pics++;
@@ -46,7 +58,13 @@ int main(int argc, char *argv[])
         }
 
         else if (pics > 0)
-             fwrite(buffer, SIZE, 1, outFile);
+             fwrite(buffer, SIZE, 1, outFile);*/
+
+        }
+
+        if (check_jpeg == 1){
+            fwrite(buffer, SIZE, 1, outFile);
+        }
 
     }
 
