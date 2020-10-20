@@ -5,7 +5,7 @@ while True:
     if height >= 1 and height <= 8:
         break
 
-j = height
+j = height-1
 for i in range(1,height+1,1):
     print((j * " ") + (i * "#"))
     j -= 1
