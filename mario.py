@@ -6,9 +6,9 @@ while True:
         break
 
 j = height
-for i in range(height+1):
+for i in range(1,height+1,1):
     print((j * " ") + (i * "#"))
     j -= 1
 
-print("")
+#print("")
 
