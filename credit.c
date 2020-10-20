@@ -1,4 +1,3 @@
-//passes all tests but doesn't show up as positive
 #include <stdio.h>
 #include <cs50.h>
 #include <math.h>
