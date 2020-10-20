@@ -1,14 +1,14 @@
+//passes all tests but doesn't show up as positive
 #include <stdio.h>
-#include <stdlib.h>
 #include <cs50.h>
 #include <math.h>
 
 int digit_check(long num, int l);
 bool luhn(long num, int l, int d);
 
-int main(int argc, string argv[]){
-    char *eptr;
-    long num = strtol(argv[1], &eptr, 10);
+int main(void){
+
+    long num = get_long("Please enter your credit card number:\n");
     int l = floor(log10(num)) + 1;
     int d = digit_check(num, l);
 
