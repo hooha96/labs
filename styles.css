@@ -1,0 +1,46 @@
+.square
+{
+    background-color: #ffffff;
+    border-radius: 25px;
+    margin: auto;
+    margin-top: 2%;
+    width: 50%;
+    border: 3px solid yellow;
+    padding: 70px 0;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.square2
+{
+    background-color: #ffffff;
+    border-radius: 25px;
+    margin: auto;
+    margin-top: 2%;
+    width: 50%;
+    border: 3px solid yellow;
+    padding: 70px 0;
+    opacity: 0.9;
+    text-align: center;
+}
+
+body
+{
+    background-image: url('bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1, h2
+{
+    text-align: center;
+    color: #234099;
+    font-family: "Impact", Charcoal, sans-serif;
+}
+
+h3
+{
+    color: green;
+    font-weight: bold;
+}
